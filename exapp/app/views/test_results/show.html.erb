@@ -1,39 +1,40 @@
+<h1>  <%= @test_result.user.name %> のテストデータ詳細画面</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @test_result.user %>
+  <strong>生徒名:</strong>
+  <%= @test_result.user.name %>
 </p>
 
 <p>
-  <strong>What test:</strong>
-  <%= @test_result.what_test %>
+  <strong>テスト種目:</strong>
+  <%= @test_result.what_test.testname %>
 </p>
 
 <p>
-  <strong>Jpn:</strong>
+  <strong>国語:</strong>
   <%= @test_result.jpn %>
 </p>
 
 <p>
-  <strong>Math:</strong>
+  <strong>数学:</strong>
   <%= @test_result.math %>
 </p>
 
 <p>
-  <strong>Eng:</strong>
+  <strong>英語:</strong>
   <%= @test_result.eng %>
 </p>
 
 <p>
-  <strong>Sci:</strong>
+  <strong>理科:</strong>
   <%= @test_result.sci %>
 </p>
 
 <p>
-  <strong>Soc:</strong>
+  <strong>社会:</strong>
   <%= @test_result.soc %>
 </p>
 
-<%= link_to 'Edit', edit_test_result_path(@test_result) %> |
-<%= link_to 'Back', test_results_path %>
+<%= link_to '編集', edit_test_result_path(@test_result) %> |
+<%= link_to '戻る', test_results_path %>

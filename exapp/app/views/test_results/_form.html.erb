@@ -12,41 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.label :user_id,'ユーザ名' %>
+    <%= form.collection_select :user_id, User.all ,:id,:name,{include_blank: true} %>
   </div>
 
   <div class="field">
-    <%= form.label :what_test_id %>
-    <%= form.text_field :what_test_id %>
+    <%= form.label :what_test_id,'テスト種目' %>
+    <%= form.collection_select :what_test_id, WhatTest.joins(:period).all ,:id,:periodname_and_testname,{include_blank: true} %>
   </div>
 
   <div class="field">
-    <%= form.label :jpn %>
+    <%= form.label :jpn,'国語' %>
     <%= form.number_field :jpn %>
   </div>
 
   <div class="field">
-    <%= form.label :math %>
+    <%= form.label :math,'数学' %>
     <%= form.number_field :math %>
   </div>
 
   <div class="field">
-    <%= form.label :eng %>
+    <%= form.label :eng,'英語' %>
     <%= form.number_field :eng %>
   </div>
 
   <div class="field">
-    <%= form.label :sci %>
+    <%= form.label :sci,'理科' %>
     <%= form.number_field :sci %>
   </div>
 
   <div class="field">
-    <%= form.label :soc %>
+    <%= form.label :soc,'社会' %>
     <%= form.number_field :soc %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "作成" %>
   </div>
 <% end %>
