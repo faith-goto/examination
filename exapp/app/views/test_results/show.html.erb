@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @test_result.user %>
+</p>
+
+<p>
+  <strong>What test:</strong>
+  <%= @test_result.what_test %>
+</p>
+
+<p>
+  <strong>Jpn:</strong>
+  <%= @test_result.jpn %>
+</p>
+
+<p>
+  <strong>Math:</strong>
+  <%= @test_result.math %>
+</p>
+
+<p>
+  <strong>Eng:</strong>
+  <%= @test_result.eng %>
+</p>
+
+<p>
+  <strong>Sci:</strong>
+  <%= @test_result.sci %>
+</p>
+
+<p>
+  <strong>Soc:</strong>
+  <%= @test_result.soc %>
+</p>
+
+<%= link_to 'Edit', edit_test_result_path(@test_result) %> |
+<%= link_to 'Back', test_results_path %>
