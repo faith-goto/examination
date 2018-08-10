@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @what_test.period %>
+</p>
+
+<p>
+  <strong>Testname:</strong>
+  <%= @what_test.testname %>
+</p>
+
+<%= link_to 'Edit', edit_what_test_path(@what_test) %> |
+<%= link_to 'Back', what_tests_path %>

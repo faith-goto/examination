@@ -1,0 +1,27 @@
+<%= form_with(model: what_test, local: true) do |form| %>
+  <% if what_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(what_test.errors.count, "error") %> prohibited this what_test from being saved:</h2>
+
+      <ul>
+      <% what_test.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :period_id %>
+    <%= form.text_field :period_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :testname %>
+    <%= form.text_field :testname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
