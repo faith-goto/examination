@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :period_id %>
-    <%= form.text_field :period_id %>
+    <%= form.label :period_id ,'期間' %>
+    <%= form.collection_select :period_id ,Period.all,:id,:periodname,{include_blank: true}  %>
   </div>
 
   <div class="field">
-    <%= form.label :testname %>
+    <%= form.label :testname ,'テスト名' %>
     <%= form.text_field :testname %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "作成" %>
   </div>
+
 <% end %>

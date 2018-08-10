@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>生徒名:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
+  <strong>学年:</strong>
   <%= @user.grade %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>

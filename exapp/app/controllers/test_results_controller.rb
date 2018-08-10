@@ -28,7 +28,7 @@ class TestResultsController < ApplicationController
 
     respond_to do |format|
       if @test_result.save
-        format.html { redirect_to @test_result, notice: 'Test result was successfully created.' }
+        format.html { redirect_to @test_result, notice: 'テストデータ作成完了' }
         format.json { render :show, status: :created, location: @test_result }
       else
         format.html { render :new }

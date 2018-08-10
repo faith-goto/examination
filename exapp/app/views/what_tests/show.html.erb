@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Period:</strong>
-  <%= @what_test.period %>
+  <strong>期間:</strong>
+  <%= @what_test.period.periodname %>
 </p>
 
 <p>
-  <strong>Testname:</strong>
+  <strong>テスト名:</strong>
   <%= @what_test.testname %>
 </p>
 
-<%= link_to 'Edit', edit_what_test_path(@what_test) %> |
-<%= link_to 'Back', what_tests_path %>
+<%= link_to '編集', edit_what_test_path(@what_test) %> |
+<%= link_to '戻る', what_tests_path %>
