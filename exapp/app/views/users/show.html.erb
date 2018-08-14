@@ -1,14 +1,42 @@
+<h1>  <%= @user.name %> のデータ詳細画面</h1>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>生徒名:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
+<h4>
   <strong>学年:</strong>
   <%= @user.grade %>
-</p>
+</h4>
 
-<%= link_to '編集', edit_user_path(@user) %> |
-<%= link_to '戻る', users_path %>
+<table class="table">
+  <thead>
+  <tr>
+    <th>期間</th>
+    <th>テスト名</th>
+    <th>国語</th>
+    <th>数学</th>
+    <th>英語</th>
+    <th>理科</th>
+    <th>社会</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @test_results.each do |test_result| %>
+    <tr>
+      <td><%= test_result.what_test.period.periodname %></td>
+      <td><%= test_result.what_test.testname %></td>
+      <td><%= test_result.jpn %></td>
+      <td><%= test_result.math %></td>
+      <td><%= test_result.eng %></td>
+      <td><%= test_result.sci %></td>
+      <td><%= test_result.soc %></td>
+      <td><%= link_to '詳細', test_result, {:class => "btn btn-primary"} %></td>
+      <td><%= link_to '編集', edit_test_result_path(test_result), {:class => "btn btn-primary"} %></td>
+      <td><%= link_to '削除', test_result, method: :delete, data: {confirm: '削除しますか?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+  <%= link_to '編集', edit_user_path(@user) %> |
+  <%= link_to '戻る', users_path %>

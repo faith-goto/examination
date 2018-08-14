@@ -5,11 +5,19 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @test_results = TestResult.all
+    @user_grade1 = User.where("grade = ?",1)
+    @user_grade2 = User.where("grade = ?",2)
+    @user_grade3 = User.where("grade = ?",3)
+    @user_grade4 = User.where("grade = ?",4)
+    @user_grade5 = User.where("grade = ?",5)
+    @user_grade6 = User.where("grade = ?",6)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @test_results = TestResult.where("user_id = ?",params[:id])
   end
 
   # GET /users/new
