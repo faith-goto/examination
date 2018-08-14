@@ -4,6 +4,11 @@ class TestResultsController < ApplicationController
   # GET /test_results
   # GET /test_results.json
   def index
+    if params[:search]
+      @grade_results = TestResult.joins(:user).where(:users => {:grade => params[:search]})
+    else
+      @grade_results = TestResult.joins(:user).where(:users => {:grade => nil})
+    end
     @test_results = TestResult.all
   end
 
@@ -42,7 +47,7 @@ class TestResultsController < ApplicationController
   def update
     respond_to do |format|
       if @test_result.update(test_result_params)
-        format.html { redirect_to @test_result, notice: 'Test result was successfully updated.' }
+        format.html { redirect_to @test_result, notice: 'テスト結果作成完了.' }
         format.json { render :show, status: :ok, location: @test_result }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class TestResultsController < ApplicationController
   def destroy
     @test_result.destroy
     respond_to do |format|
-      format.html { redirect_to test_results_url, notice: 'Test result was successfully destroyed.' }
+      format.html { redirect_to test_results_url, notice: 'テスト結果を削除しました' }
       format.json { head :no_content }
     end
   end
